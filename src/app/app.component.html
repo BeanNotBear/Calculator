@@ -1,5 +1,5 @@
 <main>
   <app-header></app-header>
-  <app-user-input></app-user-input>
-  <app-investment-results></app-investment-results>
+  <app-user-input (calculate)="calculateInvestment($event)"></app-user-input>
+  <app-investment-results [data]="items"></app-investment-results>
 </main>

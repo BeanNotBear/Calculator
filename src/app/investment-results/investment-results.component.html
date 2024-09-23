@@ -1,20 +1,26 @@
-<table>
-  <thead>
-  <tr>
-    <th>Year</th>
-    <th>Investment Value</th>
-    <th>Interest (Year)</th>
-    <th>Total Interest</th>
-    <th>Invested Capital</th>
-  </tr>
-  </thead>
-  <tbody>
+@if (data.length === 0) {
+  <p>Please calculate somethings!!!!!</p>
+} @else {
+  <table>
+    <thead>
     <tr>
-      <td>2022</td>
-      <td>2022</td>
-      <td>2022</td>
-      <td>2022</td>
-      <td>2022</td>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
     </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      @for (item of data; track item.year) {
+        <tr>
+          <td>{{ item.year }}</td>
+          <td>{{ item.valueEndOfYear }}</td>
+          <td>{{ item.interest }}</td>
+          <td>{{ item.totalInterest }}</td>
+          <td>{{ item.totalAmountInvested }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
